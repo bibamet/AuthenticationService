@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:postgres}?currentSchema=${DATABASE_SCHEMA:authservice}"
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:123}
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+
+internal:
+  jwt-access-secret: "qBTmv4oXFFR2GwjexDJ4t6fsIUIUhhXqlktXjXdkcyygs8nPVEwMfo29VDRRepYDVV5IkIxBMzr7OEHXEHd37w=="
+  jwt-refresh-secret: "zL1HB3Pch05Avfynovxrf/kpF9O2m4NCWKJUjEp27s9J2jEG3ifiKCGylaZ8fDeoONSTJP/wAzKawB8F9rOMNg=="
+  jwt-private: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCLc7lUEYPLjkUiNle2QfolchnasciSDO6C91pdUV+9Yo7VyhQrKwEVXB8cUS5WGWHE//FQByhLvzTtC9X0amWNcQXKkNVxbrVqqAhJ3u8G/BeC8DpCJ/OuidaLuaQLUdFBefRYMLaZ2KKWioxc3CaCiU07YpHAFogDvoLLYOqPYBXaaVwXw4QTnSCvl86b7/86t7XsUIUUEbWqN3O0wrx9LKpBasf18RQ24rmMg931fUacTLAFkGVxJfGV4wQGlXI27/tneUN7KBXojHNpDPt7hQSpc3ZZWMGVfTrFSekKCXNZOA3MEQ8PvjgtEEIFBaf6fwemmw/23WUCv447bb6TAgMBAAECggEABEG5kAPi2oVSvesbvVABQ0Ba4q6XmUG0zCGhzARuYDkQdB0xhWnQJCdGOdaOjAlFTz6izpcRV1KUWoIIe2f+BpXDH/5QzaAcAI/1hM+9yyBJ1XDgzmEq0pKZjnVRuRi7wvxmhYSjJkoTGHZNN45uzIBFb8EgAtWNPFQF6RBhyJOSPERwJ8cAbJUvQQ6fm8wUkbRxCC8Y4o2WmDttzMPTkdxNwgzrVitSxXI5+fljv3+Rylydn9uli8j+RvcIRY9JUmnePngHXP4Tw19Dtxuz5W6fhc06pqms8GFYI4d9aQGEficEHeRU413MRi3jBwAkU2Y0fJdswY4HzIAUMKkI8QKBgQC2NA3P7bWfRUSd0SrQuWQGLGt+etq6HHmiAYnzY3NQK/gpiWdL25QINwwmrYdRIcXZMgnJgZ/imExX4j5anXlBjeVmpldjRf6s7IyE+1aX87XmeVOfPet3EAQbzNbuUHif6vKWKd1DhFB3XlOX+DgzdvZpWXjyEa2JEmGCcxV3wwKBgQDD7vUOFpVCFXtnQsSxTmZNq5GsQw4hQymfGl/SEHpxBzEYsxBsiyWUkhscSHMFIZu/1dSYAqg4ssZE7aMYif2OkDDziRyFy6jlwnl9Ypb42hcKrrdsps5n4gWQPQYFuwvuaQYGVGeFtndVMHvi0Xe9IWDVvMvzKBPaVdyU/2gA8QKBgFOTCubeRVnaHwA4ymfVMdE3HNN2LNADcbNi+1D9xA35LSp4UT5VaNBf154CKLiJQkQ/FIgughUhAJurNijAZLcyDBCKqjjqCUhudIIm+3BVpJEkA7xeXZxOZ2QNEGVd2gaYcU95wnlOvs4SIUvq2nSY06w9EyIOA8iE+t8oRKebAoGBALgRRSZ3EMGEbOoVT7NCc9mD1NaAKEYXUoKlxF8UG/MTToxlrIhMMIHiwJVRerzXVfpiZ9ZmqKKbUKhwl0f2Wr4Tt+kSZjlLmuA+UuP4OtyOBheDC86G5mGxdIiMy5uWnR7ci0xm/tofEPx3D+uF3XdQZChntTI59GypPRC84HgBAoGAZEyTlOxEv8eeLl3IGUoTBR/DJ9Rim/7VmS6WC4LNy0UG5y1kBFSKVGHa6Pxz7SpfDzpDgoV02sD7YcWDJc9ym+CJlNPBIfBS+ImHzJF3eOonDLsobfZOdRw5bjw+QwTIsheBDw5qrNLS95wpyyXiLYY0aPHjj3ERdHdcZXSwryI=
+  jwt-public: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi3O5VBGDy45FIjZXtkH6JXIZ2rHIkgzugvdaXVFfvWKO1coUKysBFVwfHFEuVhlhxP/xUAcoS7807QvV9GpljXEFypDVcW61aqgISd7vBvwXgvA6QifzronWi7mkC1HRQXn0WDC2mdiiloqMXNwmgolNO2KRwBaIA76Cy2Dqj2AV2mlcF8OEE50gr5fOm+//Ore17FCFFBG1qjdztMK8fSyqQWrH9fEUNuK5jIPd9X1GnEywBZBlcSXxleMEBpVyNu/7Z3lDeygV6IxzaQz7e4UEqXN2WVjBlX06xUnpCglzWTgNzBEPD744LRBCBQWn+n8HppsP9t1lAr+OO22+kwIDAQAB
+  expiration-access-token: 30
+  keys:
+    public:
+      access-path: "src/main/resources/publicaccesskey.cer"
+      refresh-path: "src/main/resources/publicrefreshkey.cer"
+    private:
+      access-path: "src/main/resources/privateaccesskey.cer"
+      refresh-path: "src/main/resources/privaterefreshkey.cer"
+server:
+  port: 4444
+
